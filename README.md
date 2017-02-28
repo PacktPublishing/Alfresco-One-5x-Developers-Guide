@@ -5,7 +5,10 @@ Do you want to create more reliable and secure solutions for enterprise apps? Al
 
 
 ##Instructions and Navigation
-All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter02.
+All of the code is organized into folders. Each folder starts with a number followed by the application name. For example, Chapter03.
+
+
+Chapter 1 and 2 contain intoduction and installation steps. They do not require separate code files.
 
 
 
