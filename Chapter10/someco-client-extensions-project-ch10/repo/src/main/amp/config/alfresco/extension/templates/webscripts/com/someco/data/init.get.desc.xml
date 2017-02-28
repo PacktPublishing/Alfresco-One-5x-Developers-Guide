@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Initialize the repository for the SomeCo project</shortname>
+	<url>/someco/init</url>
+	<format default="html">extension</format>
+	<authentication>admin</authentication>
+	<transaction>required</transaction>
+</webscript>

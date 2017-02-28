@@ -1,0 +1,80 @@
+{
+  "name": "someco-app",
+  "description": "Someco Angular 2 Application",
+  "version": "0.1.0",
+  "author": "Ben Chevallereau <benjamin.chevallereau@gmail.com>",
+  "scripts": {
+    "postinstall": "typings install",
+    "clean": "rimraf node_modules typings",
+    "build": "npm run tslint && npm run tsc && npm run license-check",
+    "start": "npm run build && concurrently \"npm run tsc:w\" \"npm run serve\" ",
+    "aws": "node app.js",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "serve": "wsrv -o -s -l -p 3000 -x ./server/versions.js",
+    "typings": "typings install",
+    "tslint": "tslint -c tslint.json *.ts && tslint -c tslint.json 'app/{,**/}**.ts'",
+    "license-check": "echo 'license check is disabled'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bchevallereau/someco-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bchevallereau/someco-app/issues"
+  },
+  "keywords": [
+    "test",
+    "alfresco",
+    "angular",
+    "someco",
+    "alfresco-component"
+  ],
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.3",
+    "@angular/compiler": "2.0.0-rc.3",
+    "@angular/core": "2.0.0-rc.3",
+    "@angular/forms": "0.1.1",
+    "@angular/http": "2.0.0-rc.3",
+    "@angular/platform-browser": "2.0.0-rc.3",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.3",
+    "@angular/router": "3.0.0-alpha.7",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.3",
+    "alfresco-js-api": "^0.3.0",
+    "systemjs": "0.19.27",
+    "core-js": "2.4.0",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "0.6.12",
+    "rimraf": "2.5.2",
+    "material-design-icons": "2.2.3",
+    "material-design-lite": "1.1.3",
+    "ng2-translate": "2.2.0",
+    "pdfjs-dist": "1.5.258",
+    "flag-icon-css": "2.3.0",
+    "chart.js": "^2.1.4",
+    "ng2-charts": "1.1.0",
+    "ng2-alfresco-core": "0.3.0",
+    "ng2-alfresco-datatable": "0.3.0",
+    "ng2-alfresco-documentlist": "0.3.0",
+    "ng2-alfresco-login": "0.3.0",
+    "ng2-alfresco-search": "0.3.0",
+    "ng2-alfresco-upload": "0.3.0",
+    "ng2-alfresco-viewer": "0.3.0",
+    "ng2-activiti-form": "0.3.0",
+    "ng2-activiti-tasklist": "0.3.0",
+    "ng2-activiti-processlist": "0.3.0",
+    "ng2-alfresco-webscript": "0.3.0"
+  },
+  "devDependencies": {
+    "angular-cli": "1.0.0-beta.9",
+    "concurrently": "^2.0.0",
+    "tslint": "^3.8.1",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "mime": "^1.3.4",
+    "wsrv": "^0.1.4"
+  },
+  "license": "Apache-2.0"
+}

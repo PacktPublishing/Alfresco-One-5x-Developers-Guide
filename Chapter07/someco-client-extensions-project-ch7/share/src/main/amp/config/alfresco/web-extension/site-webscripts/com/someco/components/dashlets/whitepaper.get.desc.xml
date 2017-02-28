@@ -1,0 +1,6 @@
+<webscript>
+    <shortname>List of whitepapers</shortname>
+    <description>Display all available whitepapers</description>
+    <family>dashlet</family>
+    <url>/components/dashlets/whitepaper</url>
+</webscript>

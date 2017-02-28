@@ -1,0 +1,120 @@
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Someco</title>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+	href="//cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+
+<script>
+	var whitepapers = {};
+	$.get({
+		url : 'http://localhost:8080/alfresco/s/someco/whitepapers.json?guest=true'
+	}).success(function(data) {
+		for (var i = 0; i < data.whitepapers.length; i++) {
+			var wp = data.whitepapers[i];
+			var html = "<div class='whitepaper' id='" + wp.id + "'><h4 class='title'>" + wp.title + "</h4></div><div id='rating-" + wp.id + "'></div>";
+			$("#whitepapers").append(html);
+			$("#rating-" + wp.id).rateYo({
+				rating : wp.rating.average,
+				readOnly : true
+			});
+			whitepapers[wp.id] = wp;
+			$("#" + wp.id + " .title").click(function() {
+				var id = $(this).parent(".whitepaper").attr("id");
+				$("#wp-title").html(whitepapers[id].title);
+				$("#wp-description").html(whitepapers[id].description);
+				$("#wp-download").removeClass("hidden");
+				$("#wp-download").attr("href", "http://localhost:8080" + whitepapers[id].link);
+			});
+		}
+	});
+</script>
+
+</head>
+<body style="padding: 10px;">
+	<div class="row">
+		<div class="col-md-2" style="text-align: center;">
+			<img src="./logo.png"></img>
+		</div>
+		<div class="col-md-2">
+			<h3>Solutions</h3>
+			<hr />
+			<h4>Clients</h4>
+			<h4>Case Studies</h4>
+			<h4>Industry Solutions</h4>
+		</div>
+		<div class="col-md-2">
+			<h3>Approach</h3>
+			<hr />
+			<h4>User Experience</h4>
+			<h4>Assembly Methodology</h4>
+		</div>
+		<div class="col-md-2">
+			<h3>Expertise</h3>
+			<hr />
+			<h4>Next Generation Internet</h4>
+			<h4>Open Source Partners</h4>
+			<h5>More...</h5>
+		</div>
+		<div class="col-md-2">
+			<h3>Company</h3>
+			<hr />
+			<h4>People &amp; Careers</h4>
+			<h4>About Us</h4>
+			<h4 style="text-decoration: underline; font-weight: bold;">News,
+				Events &amp; Pubs</h4>
+		</div>
+		<div class="col-md-2">
+			<h3>Search</h3>
+			<hr />
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search for...">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">Go!</button>
+				</span>
+			</div>
+			<h4>Location &amp; Contact</h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>News, Events &amp; Pubs</h2>
+			<div id="whitepapers"></div>
+		</div>
+		<div class="col-md-6">
+			<h3 id="wp-title"></h3>
+			<h6 id="wp-description"></h6>
+			<a id="wp-download" target="_blank" class="hidden">Download</a>
+		</div>
+	</div>
+</body>
+</html>

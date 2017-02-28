@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+	<bean id="set-web-flag" class="com.someco.repo.action.executer.SetWebFlag" parent="action-executer">
+		<property name="nodeService" ref="NodeService" />
+		<property name="publicAction">
+			<value>false</value>
+		</property>
+	</bean>
+
+	<!-- Move Replaced Action Bean -->
+	<bean id="move-replaced" class="com.someco.repo.action.executer.MoveReplacedActionExecuter" parent="action-executer">
+		<property name="nodeService" ref="NodeService" />
+		<property name="fileFolderService" ref="FileFolderService" />
+	</bean>
+
+	<bean id="someco.actionResourceBundles" class="org.alfresco.i18n.ResourceBundleBootstrapComponent">
+		<property name="resourceBundles">
+			<list>
+				<value>alfresco.module.${project.artifactId}.messages.action-config</value>
+			</list>
+		</property>
+	</bean>
+</beans>

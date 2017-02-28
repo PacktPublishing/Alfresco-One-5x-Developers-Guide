@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+
+	<bean id="policyLogger" class="com.someco.repo.behavior.PolicyLogger" init-method="init">
+		<property name="policyComponent" ref="policyComponent" />
+	</bean>
+
+	<bean id="onUpdateHrPolicy" class="org.alfresco.repo.policy.registration.ClassPolicyRegistration" parent="policyRegistration">
+		<property name="policyName">
+			<value>{http://www.alfresco.org}onUpdateNode</value>
+		</property>
+		<property name="className">
+			<value>{http://www.someco.com/model/content/1.0}hrPolicy</value>
+		</property>
+		<property name="behaviour">
+			<bean class="org.alfresco.repo.jscript.ScriptBehaviour" parent="scriptBehaviour">
+				<property name="location">
+					<bean class="org.alfresco.repo.jscript.ClasspathScriptLocation">
+						<constructor-arg>
+							<value>alfresco/extension/scripts/onUpdateNode.js</value>
+						</constructor-arg>
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="ratingBehaviour" class="com.someco.repo.behavior.Rating" init-method="init">
+		<property name="nodeService" ref="nodeService" />
+		<property name="policyComponent" ref="policyComponent" />
+	</bean>
+
+</beans>

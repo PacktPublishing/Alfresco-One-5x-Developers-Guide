@@ -1,0 +1,6 @@
+<webscript>
+	<shortname>Hello World Form 2</shortname>
+	<description>Hello world form web script</description>
+	<url>/someco/helloworldform2</url>
+	<transaction>none</transaction>
+</webscript>

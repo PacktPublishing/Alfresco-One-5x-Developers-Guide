@@ -1,0 +1,28 @@
+.thumbnail {
+	cursor: pointer;
+	display: block;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+	width: 100px;
+}
+
+.document {
+	padding: 15px;
+}
+
+.detail {
+	clear: left;
+	line-height: 1.5em;
+	min-height: 1.5em;
+	padding-bottom: 0.2em;
+	padding-left: 20px;
+}
+
+.filename {
+	font-size: 131%;
+	font-weight: normal;
+	padding-bottom: 0.2em;
+	padding-left: 20px;
+	word-wrap: break-word;
+}

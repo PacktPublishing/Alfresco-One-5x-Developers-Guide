@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+   <title>Someco Webable Documents</title>
+   <title-id>page.someco.webable.title</title-id>
+   <description>List all documents with the Webable aspect</description>
+   <description-id>page.someco.webable.description</description-id>
+   <template-instance>someco-webable</template-instance>
+</page>

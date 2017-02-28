@@ -1,0 +1,2 @@
+mode=unattended
+alfresco_admin_password=admin

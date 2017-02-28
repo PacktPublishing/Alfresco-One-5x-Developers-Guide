@@ -1,0 +1,18 @@
+<Alloy>
+	<Window class="container">
+		<ListView id="elementsList" defaultItemTemplate="elementTemplate">
+			<Templates>
+				<ItemTemplate name="elementTemplate" height="80">
+					<View id="documentProperties">
+						<Label bindId="name" id="name" />
+						<View id="secondLine">
+							<Label class="line2 fieldLabel" text="Date: " />
+							<Label class="line2" bindId="date" id="date" />
+						</View>
+					</View>
+				</ItemTemplate>
+			</Templates>
+			<ListSection name="elements"></ListSection>
+		</ListView>
+	</Window>
+</Alloy>

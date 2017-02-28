@@ -1,0 +1,580 @@
+<alfresco-config>
+
+	<config evaluator="aspect" condition="sc:webable">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="sc:published" />
+					<show id="sc:isActive" />
+				</field-visibility>
+				<appearance>
+					<field id="sc:isActive" read-only="true" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="aspect" condition="sc:clientRelated">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="sc:clientName" />
+					<show id="sc:projectName" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="aspect" condition="sc:rateable">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="sc:averageRating" read-only="true" />
+					<show id="sc:ratings" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="aspect" condition="cm:replaceable">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:replaces" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:doc">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:doc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:marketingDoc">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:campaign" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:marketingDoc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:campaign" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:whitepaper">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:campaign" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:marketingDoc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:campaign" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:hrDoc">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:hrDoc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:salesDoc">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:salesDoc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:opsDoc">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+					<show id="sc:statusIndicator" />
+					<show id="sc:statusSummary" />
+				</field-visibility>
+				<appearance>
+					<field id="sc:statusSummary">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">5</control-param>
+							<control-param name="columns">50</control-param>
+						</control>
+					</field>
+					<field id="sc:statusIndicator">
+						<control template="/com/someco/components/form/controls/trafficlight.ftl">
+							<control-param name="otpions">Green,Yellow,Red</control-param>
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:opsDoc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+					<show id="sc:statusIndicator" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="node-type" condition="sc:legalDoc">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:author" force="true" />
+					<show id="size" for-mode="view" />
+					<show id="cm:creator" for-mode="view" />
+					<show id="cm:created" for-mode="view" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="model-type" condition="sc:legalDoc">
+		<forms>
+			<form id="search">
+				<field-visibility>
+					<show id="cm:name" />
+					<show id="cm:title" force="true" />
+					<show id="cm:description" force="true" />
+					<show id="mimetype" />
+					<show id="cm:modifier" for-mode="view" />
+					<show id="cm:modified" for-mode="view" />
+					<show id="sc:relatedDocuments" />
+				</field-visibility>
+			</form>
+		</forms>
+	</config>
+
+	<!-- Document Library config section -->
+	<config evaluator="string-compare" condition="DocumentLibrary" replace="true">
+		<aspects>
+			<visible>
+				<aspect name="cm:replaceable" />
+				<aspect name="cm:generalclassifiable" />
+				<aspect name="cm:complianceable" />
+				<aspect name="cm:dublincore" />
+				<aspect name="cm:effectivity" />
+				<aspect name="cm:summarizable" />
+				<aspect name="cm:versionable" />
+				<aspect name="cm:templatable" />
+				<aspect name="cm:emailed" />
+				<aspect name="emailserver:aliasable" />
+				<aspect name="cm:taggable" />
+				<aspect name="app:inlineeditable" />
+				<aspect name="cm:geographic" />
+				<aspect name="exif:exif" />
+				<aspect name="audio:audio" />
+				<aspect name="cm:indexControl" />
+				<aspect name="dp:restrictable" />
+				<aspect name="smf:customConfigSmartFolder" />
+				<aspect name="smf:systemConfigSmartFolder" />
+				<aspect name="sc:webable" />
+				<aspect name="sc:clientRelated" />
+				<aspect name="sc:rateable" />
+			</visible>
+
+			<!-- Aspects that a user can add. Same as "visible" if left empty -->
+			<addable>
+			</addable>
+
+			<!-- Aspects that a user can remove. Same as "visible" if left empty -->
+			<removeable>
+			</removeable>
+		</aspects>
+
+		<types>
+			<type name="cm:content">
+				<subtype name="smf:smartFolderTemplate" />
+				<subtype name="sc:doc" />
+				<subtype name="sc:marketingDoc" />
+				<subtype name="sc:whitepaper" />
+				<subtype name="sc:hrDoc" />
+				<subtype name="sc:salesDoc" />
+				<subtype name="sc:opsDoc" />
+				<subtype name="sc:legalDoc" />
+				<subtype name="sc:hrPolicy" />
+			</type>
+
+			<type name="sc:doc">
+				<subtype name="sc:marketingDoc" />
+				<subtype name="sc:whitepaper" />
+				<subtype name="sc:hrDoc" />
+				<subtype name="sc:salesDoc" />
+				<subtype name="sc:opsDoc" />
+				<subtype name="sc:legalDoc" />
+				<subtype name="sc:hrPolicy" />
+			</type>
+
+			<type name="sc:hrDoc">
+				<subtype name="sc:hrPolicy" />
+			</type>
+
+
+			<type name="cm:folder">
+			</type>
+
+			<type name="trx:transferTarget">
+				<subtype name="trx:fileTransferTarget" />
+			</type>
+		</types>
+
+		<indicators>
+			<indicator id="trafficlight-red" index="100">
+				<evaluator>evaluator.doclib.action.statusIsRed</evaluator>
+			</indicator>
+			<indicator id="trafficlight-yellow" index="110">
+				<evaluator>evaluator.doclib.action.statusIsYellow</evaluator>
+			</indicator>
+			<indicator id="trafficlight-green" index="120">
+				<evaluator>evaluator.doclib.action.statusIsGreen</evaluator>
+			</indicator>
+		</indicators>
+
+	</config>
+
+	<config evaluator="string-compare" condition="AdvancedSearch">
+		<advanced-search>
+			<forms>
+				<form labelId="type.sc_doc" descriptionId="search.form.label.sc_doc">sc:doc</form>
+				<form labelId="type.sc_marketingDoc" descriptionId="search.form.label.sc_marketingDoc">sc:marketingDoc</form>
+				<form labelId="type.sc_whitepaper" descriptionId="search.form.label.sc_whitepaper">sc:whitepaper</form>
+				<form labelId="type.sc_hrDoc" descriptionId="search.form.label.sc_hrDoc">sc:hrDoc</form>
+				<form labelId="type.sc_salesDoc" descriptionId="search.form.label.sc_salesDoc">sc:salesDoc</form>
+				<form labelId="type.sc_opsDoc" descriptionId="search.form.label.sc_opsDoc">sc:opsDoc</form>
+				<form labelId="type.sc_legalDoc" descriptionId="search.form.label.sc_legalDoc">sc:legalDoc</form>
+			</forms>
+		</advanced-search>
+	</config>
+
+	<!-- Actions -->
+	<config evaluator="string-compare" condition="DocLibActions">
+		<actions>
+			<action id="someco-web-enable" type="javascript" label="actions.someco-web-enable" icon="someco-web-enable">
+				<param name="function">onActionFormDialog</param>
+				<param name="itemKind">action</param>
+				<param name="itemId">set-web-flag</param>
+				<param name="mode">create</param>
+				<param name="destination">{node.nodeRef}</param>
+				<param name="successMessage">message.web-flag.enabled</param>
+				<param name="failureMessage">message.web-flag.failure</param>
+				<permissions>
+					<permission allow="true">EnableFlag</permission>
+				</permissions>
+				<evaluator>evaluator.doclib.action.isSomecoPublishable</evaluator>
+			</action>
+			<action id="someco-web-disable" type="javascript" label="actions.someco-web-disable" icon="someco-web-disable">
+				<param name="function">onActionSimpleRepoAction</param>
+				<param name="action">set-web-flag</param>
+				<param name="active">false</param>
+				<param name="successMessage">message.web-flag.disabled</param>
+				<param name="failureMessage">message.web-flag.failure</param>
+				<permissions>
+					<permission allow="true">EnableFlag</permission>
+				</permissions>
+				<evaluator>evaluator.doclib.action.isSomecoUnpublishable</evaluator>
+			</action>
+		</actions>
+
+		<actionGroups>
+			<actionGroup id="document-browse">
+				<action index="400" id="someco-web-enable" />
+				<action index="400" id="someco-web-disable" />
+			</actionGroup>
+			<actionGroup id="document-details">
+				<action index="400" id="someco-web-enable" />
+				<action index="400" id="someco-web-disable" />
+			</actionGroup>
+		</actionGroups>
+	</config>
+
+	<config evaluator="string-compare" condition="set-web-flag">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="published" />
+				</field-visibility>
+				<appearance>
+					<field id="published" label-id="property.sc_published" mandatory="true">
+						<control template="/org/alfresco/components/form/controls/date.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="string-compare" condition="SitePages" replace="true">
+		<pages>
+			<page id="calendar">calendar</page>
+			<page id="wiki-page">wiki-page?title=Main_Page</page>
+			<page id="documentlibrary">documentlibrary</page>
+			<page id="discussions-topiclist">discussions-topiclist</page>
+			<page id="blog-postlist">blog-postlist</page>
+			<page id="links">links</page>
+			<page id="data-lists">data-lists</page>
+			<page id="someco-webable">someco-webable</page>
+		</pages>
+	</config>
+
+	<config evaluator="string-compare" condition="activiti$helloWorldUI">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="bpm:workflowDescription" />
+					<show id="packageItems" />
+					<show id="scwf:helloName" />
+					<show id="transitions" />
+					<show id="bpm:status" />
+				</field-visibility>
+				<appearance>
+					<set id="" appearance="title" label-id="workflow.set.general" />
+					<set id="items" appearance="title" label-id="workflow.set.items" />
+					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<set id="other" appearance="title" label-id="workflow.set.other" />
+					<field id="bpm:workflowDescription" label-id="workflow.field.message">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="style">width: 95%</control-param>
+						</control>
+					</field>
+					<field id="packageItems" set="items" />
+					<field id="scwf:helloName" set="other" />
+					<field id="bpm:status" set="progress" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="string-compare" condition="activiti$publishWhitepaper">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="bpm:workflowDescription" />
+					<show id="scwf:reviewerEmail" />
+					<show id="bpm:assignee" />
+					<show id="packageItems" />
+					<show id="transitions" />
+				</field-visibility>
+				<appearance>
+					<set id="" appearance="title" label-id="workflow.set.general" />
+					<set id="items" appearance="title" label-id="workflow.set.items" />
+					<set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<field id="bpm:workflowDescription" label-id="workflow.field.message">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="style">width: 95%</control-param>
+						</control>
+					</field>
+					<field id="bpm:assignee" label-id="workflow.field.assign_to" set="assignee" />
+					<field id="scwf:reviewerEmail" set="assignee" />
+					<field id="packageItems" set="items" />
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+	<config evaluator="task-type" condition="scwf:reviewTask">
+		<forms>
+			<form>
+				<field-visibility>
+					<show id="message" />
+					<show id="packageItems" />
+					<show id="bpm:comment" />
+					<show id="wf:reviewOutcome" />
+				</field-visibility>
+				<appearance>
+					<set id="" appearance="title" label-id="workflow.set.task.info" />
+					<set id="info" appearance="" template="/org/alfresco/components/form/3-column-set.ftl" />
+					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<set id="items" appearance="title" label-id="workflow.set.items" />
+					<set id="response" appearance="title" label-id="workflow.set.response" />
+
+					<field id="message">
+						<control template="/org/alfresco/components/form/controls/info.ftl" />
+					</field>
+					<field id="packageItems" set="items" />
+					<field id="bpm:comment" label-id="workflow.field.comment" set="response">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="saveLineBreaks">true</control-param>
+						</control>
+					</field>
+					<field id="wf:reviewOutcome" label-id="workflow.field.outcome" set="response">
+						<control template="/org/alfresco/components/form/controls/workflow/activiti-transitions.ftl" />
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+
+</alfresco-config>

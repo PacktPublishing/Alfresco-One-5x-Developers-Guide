@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+
+	<bean id='permissionsModelDAO' class="org.alfresco.repo.security.permissions.impl.model.PermissionModel" init-method="init">
+		<property name="model">
+			<value>alfresco/module/${project.artifactId}/model/scPermissionDefinitions.xml</value>
+		</property>
+		<property name="dtdSchema">
+			<value>alfresco/model/permissionSchema.dtd</value>
+		</property>
+		<property name="nodeService">
+			<ref bean="nodeService" />
+		</property>
+		<property name="dictionaryService">
+			<ref bean="dictionaryService" />
+		</property>
+	</bean>
+
+	<bean id="siteService_permissionBootstrap" parent="permissionModelBootstrap">
+		<property name="model">
+			<value>alfresco/module/${project.artifactId}/model/scSitePermissionDefinitions.xml</value>
+		</property>
+	</bean>
+
+	<bean id="baseJsonConversionComponent" abstract="true">
+		<property name="nodeService" ref="NodeService" />
+		<property name="publicServiceAccessService" ref="PublicServiceAccessService" />
+		<property name="namespaceService" ref="NamespaceService" />
+		<property name="fileFolderService" ref="FileFolderService" />
+		<property name="lockService" ref="LockService" />
+		<property name="permissionService" ref="PermissionService" />
+		<property name="contentService" ref="ContentService" />
+		<property name="userPermissions">
+			<list>
+				<value>Unlock</value>
+				<value>CancelCheckOut</value>
+				<value>ChangePermissions</value>
+				<value>CreateChildren</value>
+				<value>Delete</value>
+				<value>Write</value>
+				<value>EnableFlag</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

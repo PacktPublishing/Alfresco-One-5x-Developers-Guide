@@ -1,0 +1,21 @@
+Vagrant.configure(2) do |config|
+  config.vm.box = "box-cutter/centos72"
+  # Redirect Tomcat Port
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  # Redirect JPDA Debugging Port
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  # Redirect Custom NodeJS port
+  config.vm.network "forwarded_port", guest: 9000, host: 9000
+  # Redirect CAS HTTP port
+  config.vm.network "forwarded_port", guest: 8081, host: 8081
+  # Redirect CAS SSL port
+  config.vm.network "forwarded_port", guest: 8444, host: 8444
+  # Redirect Apache HTTP port
+  config.vm.network "forwarded_port", guest: 1080, host: 1080
+  # Redirect Apache SSL port
+  config.vm.network "forwarded_port", guest: 1443, host: 1443
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 4096
+    v.cpus = 1
+  end
+end

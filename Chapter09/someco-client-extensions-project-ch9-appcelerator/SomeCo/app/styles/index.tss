@@ -1,0 +1,40 @@
+".container": {
+	backgroundColor: "white",
+	top: 25
+}
+
+"#documentProperties": {
+	top: 0,
+	left: 10,
+	right: 0,
+	bottom: 0,
+	layout: "vertical",
+	verticalAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+}
+
+"#name": {
+	left: 0,
+	top: 4,
+	height: 55,
+	color: "black",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+	font: {
+		fontSize: 16
+	}
+}
+
+"#secondLine": {
+	left: 0,
+	right: 0,
+	layout: "horizontal"
+}
+
+".fieldLabel": {
+	color: "#999"
+}
+
+".line2": {
+	font: {
+		fontSize: 10
+	}
+}

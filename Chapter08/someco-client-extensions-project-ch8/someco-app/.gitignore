@@ -1,0 +1,14 @@
+typings/
+node_modules/
+bower_components/
+app/**/*.js
+app/**/*.js.map
+!app/js/Polyline.js
+.idea
+versions.json
+dist/
+coverage/
+
+# docker files
+docker-compose.yml
+Dockerfile

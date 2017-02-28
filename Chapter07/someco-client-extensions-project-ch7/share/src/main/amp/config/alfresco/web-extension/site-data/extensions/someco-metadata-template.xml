@@ -1,0 +1,26 @@
+<extension>
+	<modules>
+		<module>
+			<id>SomeCo Document Metadata Template</id>
+			<version>1.0</version>
+			<auto-deploy>true</auto-deploy>
+			<configurations>
+				<config evaluator="string-compare" condition="DocumentLibrary">
+					<metadata-templates>
+						<template id="somecoOperationalDocument">
+							<evaluator>evaluator.doclib.action.isSomecoOperatonDoc</evaluator>
+							<banner index="10" id="lockBanner" evaluator="evaluator.doclib.metadata.hasLockBanner">{lockBanner}</banner>
+							<banner index="20" id="syncTransientError" evaluator="evaluator.doclib.metadata.hasSyncTransientErrorBanner">{syncTransientError}</banner>
+							<banner index="30" id="syncFailed" evaluator="evaluator.doclib.metadata.hasSyncFailedBanner">{syncFailed}</banner>
+							<line index="10" id="date">{date}{size}</line>
+							<line index="20" id="statusSummary" view="detailed">{sc_statusSummary property.sc_statusSummary}</line>
+							<line index="30" id="tags" view="detailed">{tags}</line>
+							<line index="40" id="categories" view="detailed" evaluator="evaluator.doclib.metadata.hasCategories">{categories}</line>
+							<line index="50" id="social" view="detailed">{social}</line>
+						</template>
+					</metadata-templates>
+				</config>
+			</configurations>
+		</module>
+	</modules>
+</extension> 

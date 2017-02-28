@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.someco.cas</groupId>
+	<artifactId>someco-cas</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>SomeCo CAS webapp</name>
+	<organization>
+		<name>SomeCo</name>
+		<url>http://www.someco.com</url>
+	</organization>
+	<description>SomeCo's configuration of the JA-SIG CAS server.</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-webapp</artifactId>
+			<version>3.6.0</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-core</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jasig.cas</groupId>
+			<artifactId>cas-server-support-ldap</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>cas</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>jasig-repository</id>
+			<name>JA-SIG Maven2 Repository</name>
+			<url>http://developer.ja-sig.org/maven2</url>
+		</repository>
+	</repositories>
+</project>

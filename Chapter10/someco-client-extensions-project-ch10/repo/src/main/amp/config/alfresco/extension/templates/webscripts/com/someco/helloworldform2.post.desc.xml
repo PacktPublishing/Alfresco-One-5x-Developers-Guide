@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Hello World Form Post 2</shortname>
+	<description>Hello world form post web script</description>
+	<url>/someco/helloworldform2</url>
+	<authentication runas="admin">guest</authentication>
+	<transaction>required</transaction>
+</webscript>

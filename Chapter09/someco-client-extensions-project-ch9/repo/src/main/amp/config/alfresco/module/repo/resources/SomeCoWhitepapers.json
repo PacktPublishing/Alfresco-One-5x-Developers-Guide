@@ -1,0 +1,195 @@
+{
+    "name": "SomeCo Marketing Virtual Folders",
+    "nodes": [
+        {
+            "id": "1",
+            "name": "All Whitepapers",
+            "description": "List all whitepapers in this folder",
+            "search": {
+                "language": "fts-alfresco",
+                "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper'"
+            },
+            "filing": {
+                "path": "%ACTUAL_PATH%",
+                "classification": {
+                    "type": "sc:whitepaper",
+                    "aspects": [
+                        "sc:webable",
+                        "sc:rateable"
+                    ]
+                }
+            }
+        },
+        {
+            "id": "2",
+            "name": "By Campaign",
+            "description": "Whitepapers by campaign",
+            "nodes": [
+                {
+                    "id": "21",
+                    "name": "Application Syndication",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:campaign:'Application Syndication'"
+                    },
+                    "filing": {
+                        "path": "%ACTUAL_PATH%",
+                        "classification": {
+                            "type": "sc:whitepaper",
+                            "aspects": [
+                                "sc:webable",
+                                "sc:rateable"
+                            ]
+                        },
+                        "properties": {
+                            "sc:campaign": "Application Syndication"
+                        }
+                    }
+                },
+                {
+                    "id": "22",
+                    "name": "Private Event Retailing",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:campaign:'Private Event Retailing'"
+                    },
+                    "filing": {
+                        "path": "%ACTUAL_PATH%",
+                        "classification": {
+                            "type": "sc:whitepaper",
+                            "aspects": [
+                                "sc:webable",
+                                "sc:rateable"
+                            ]
+                        },
+                        "properties": {
+                            "sc:campaign": "Private Event Retailing"
+                        }
+                    }
+                },
+                {
+                    "id": "23",
+                    "name": "Social Shopping",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:campaign:'Social Shopping'"
+                    },
+                    "filing": {
+                        "path": "%ACTUAL_PATH%",
+                        "classification": {
+                            "type": "sc:whitepaper",
+                            "aspects": [
+                                "sc:webable",
+                                "sc:rateable"
+                            ]
+                        },
+                        "properties": {
+                            "sc:campaign": "Social Shopping"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "By Status",
+            "description": "Whitepapers by status",
+            "nodes": [
+                {
+                    "id": "31",
+                    "name": "Published",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true"
+                    }
+                },
+                {
+                    "id": "32",
+                    "name": "Not Published",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND ( sc:isActive:false OR ISNULL:'sc:isActive' )"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "By Publication Date",
+            "description": "Whitepapers by publication date",
+            "nodes": [
+                {
+                    "id": "41",
+                    "name": "Yesterday",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:published:[NOW/DAY-1DAY TO NOW/DAY+1DAY]"
+                    }
+                },
+                {
+                    "id": "42",
+                    "name": "Last Week",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:published:[NOW/DAY-7DAYS TO NOW/DAY+1DAY]"
+                    }
+                },
+                {
+                    "id": "43",
+                    "name": "Last 2 Weeks",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:published:[NOW/DAY-14DAYS TO NOW/DAY+1DAY]"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "By Rate",
+            "description": "Whitepapers by rate",
+            "nodes": [
+                {
+                    "id": "51",
+                    "name": "Between 0 and 1",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:averageRating:[0 TO 1]"
+                    }
+                },
+                {
+                    "id": "52",
+                    "name": "Between 1 and 2",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:averageRating:[1 TO 2]"
+                    }
+                },
+                {
+                    "id": "53",
+                    "name": "Between 2 and 3",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:averageRating:[2 TO 3]"
+                    }
+                },
+                {
+                    "id": "54",
+                    "name": "Between 3 and 4",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:averageRating:[3 TO 4]"
+                    }
+                },
+                {
+                    "id": "55",
+                    "name": "Between 4 and 5",
+                    "search": {
+                        "language": "fts-alfresco",
+                        "query": "(PATH:'%ACTUAL_PATH%//*') AND TYPE:'sc:whitepaper' AND sc:isActive:true AND sc:averageRating:[4 TO 5]"
+                    }
+                }
+            ]
+        }
+    ]
+}
