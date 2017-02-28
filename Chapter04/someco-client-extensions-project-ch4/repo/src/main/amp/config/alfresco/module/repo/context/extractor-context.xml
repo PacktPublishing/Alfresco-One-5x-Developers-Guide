@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+	<bean id="extracter.Poi" class="org.alfresco.repo.content.metadata.PoiMetadataExtracter" parent="baseMetadataExtracter">
+		<property name="inheritDefaultMapping">
+			<value>false</value>
+		</property>
+		<property name="mappingProperties">
+			<bean class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="location">
+					<value>classpath:alfresco/module/${project.artifactId}/extractor-mappings.properties</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+</beans>
