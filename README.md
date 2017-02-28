@@ -11,7 +11,12 @@ All of the code is organized into folders. Each folder starts with a number foll
 
 The code will look like the following:
 ```
-
+{
+"rating": {
+"average": 1.923,
+"count": 13
+}
+}
 ```
 
 To work through the examples in this book, you will need:
